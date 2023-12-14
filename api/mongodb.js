@@ -20,7 +20,7 @@ async function connectToDatabase() {
 
   try {
     await client.connect();
-    console.lof("Connected to mongoDB");
+    console.log("Connected to mongoDB");
     db = client.db(process.env.MONGO_DB_NAME);
 
     users = db.collection(process.env.MONGO_USERS_COLLECTION);

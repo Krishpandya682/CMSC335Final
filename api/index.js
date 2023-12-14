@@ -7,7 +7,7 @@ import commentRoutes from "./routes/comments.js";
 import replyRoutes from "./routes/replies.js";
 import newsApiRoutes from "./routes/newsApi.js";
 import multer from "multer";
-import { posts, users } from "../mongodb.js"; // Assuming you have 'posts' and 'users' collections
+import { posts, users } from "./mongodb.js"; // Assuming you have 'posts' and 'users' collections
 
 
 

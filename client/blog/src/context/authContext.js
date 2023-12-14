@@ -9,6 +9,7 @@ export const AuthContextProvider = ({children})=>{
 
     const login = async(inputs)=>{
         const res = await axios.post("https://three35finalapi.onrender.com/api/auth/login", inputs);
+        console.log("CUrrent User set to ", res.data);
         setCurrentUser(res.data)
     };
 

@@ -88,10 +88,10 @@ export const addPost = async (req, res) => {
     const token = req.cookies.access_token;
     console.log("Checking req.coockioes", req.cookies);
     console.log("Checking token", token);
-    if (!token) return res.status(401).json("Not authenticated!");
+    // if (!token) return res.status(401).json("Not authenticated!");
 
     const userInfo = jwt.verify(token, "jwtkey");
-    if (!userInfo) return res.status(403).json("Token is not valid!");
+    // if (!userInfo) return res.status(403).json("Token is not valid!");
 
     const newPost = {
       title: req.body.title,
@@ -99,9 +99,9 @@ export const addPost = async (req, res) => {
       img: req.body.img,
       cat: req.body.cat,
       date: req.body.date,
-      uid: userInfo._id,
+      uid: userInfo?userInfo._id:req.body.uid,
     };
-
+    console.log(userInfo);
     await posts.insertOne(newPost);
 
     return res.json("Post has been created");

@@ -114,8 +114,8 @@ export const login = async (req, res) => {
     // Storing the token inside a cookie on the website
     res.cookie('access_token', token, {
       httpOnly: true, // For extra security
-    }).status(200).json({ username: user.username, email: user.email, img: user.img }); // To ensure security - not sending password
-    console.log("Logged In!",token);
+    }).status(200).json({id: user.id, username: user.username, email: user.email, img: user.img }); // To ensure security - not sending password
+    console.log("Logged In!",res.cookie);
   } catch (error) {
     console.error('Error during login:', error);
     return res.status(500).json({ error: 'Internal Server Error' });

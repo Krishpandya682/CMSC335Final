@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import { AuthContext } from '../context/authContext';
 
 const AddBlog = () => {
   const state = useLocation().state
@@ -28,10 +28,12 @@ const AddBlog = () => {
 
   const handleClick = async (e)=>{
     e.preventDefault();
+
+    console.log("User from local srtorage is:",localStorage.getItem("user"));
     const imgUrl = await upload();
     try{
       state ? await axios.put(`https://three35finalapi.onrender.com/api/posts/${state._id}`, {title, desc:value, cat, img:file ? imgUrl:""}) :
-      await axios.post(`https://three35finalapi.onrender.com/api/posts/`, {title, desc:value, cat, img:file ? imgUrl:"", date:moment(Date.now()).format("YYYY-MM-DD HH:mm:ss" )});
+      await axios.post(`https://three35finalapi.onrender.com/api/posts/`, {title, desc:value, cat, img:file ? imgUrl:"", date:moment(Date.now()).format("YYYY-MM-DD HH:mm:ss" ),uid:localStorage.getItem("user")._id});
       navigate("/");
     } catch(err) {
       console.log(err);

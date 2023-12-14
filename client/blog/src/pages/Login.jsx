@@ -24,9 +24,12 @@ const Login = () => {
   const handleSubmit = async e =>{
     e.preventDefault()
     try{
+      console.log("Logging in");
       await login(inputs)
-      await axios.post("https://three35finalapi.onrender.com/api/auth/login", inputs)
+      // await axios.post("https://three35finalapi.onrender.com/api/auth/login", inputs)
+      console.log("Logged in!!!");
       navigate("/")
+
     }catch(err){
       console.log(err.response.data.error)
       setError(err.response.data.error)

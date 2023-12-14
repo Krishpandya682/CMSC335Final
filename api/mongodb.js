@@ -15,7 +15,6 @@ async function connectToDatabase() {
   console.log("Connecting to database!");
   const mongoURI = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.fdxtfzw.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`;
 
-  console.log("URI:", mongoURI);
   client = new MongoClient(mongoURI, {
     serverApi: ServerApiVersion.v1,
   });

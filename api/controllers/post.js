@@ -6,7 +6,6 @@ import { ObjectId } from "mongodb";
 
 export const getPosts = async (req, res) => {
   try {
-    console.log("Get posts testing Mongo:-!!", posts);
     const filter = req.query.cat ? { cat: req.query.cat } : {};
 
     const result = await posts.find(filter).toArray();

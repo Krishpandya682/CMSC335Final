@@ -46,6 +46,5 @@ app.use("/api/replies", replyRoutes);
 app.listen(8800, () => {
   databaseConnection.then(() => {
     console.log("Connected!");
-    console.log("Posts:-", posts);
   });
 });

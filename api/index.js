@@ -7,6 +7,7 @@ import commentRoutes from "./routes/comments.js";
 import replyRoutes from "./routes/replies.js";
 import newsApiRoutes from "./routes/newsApi.js";
 import multer from "multer";
+import { posts, users } from "../mongodb.js"; // Assuming you have 'posts' and 'users' collections
 
 
 
@@ -46,5 +47,6 @@ app.use("/api/replies", replyRoutes);
 
 app.listen(8800, ()=>{
     
-    console.log("Connected!")
+    console.log("Connected!");
+    console.log("Posts:-",posts);
 })

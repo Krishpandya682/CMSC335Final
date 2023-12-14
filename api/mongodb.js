@@ -12,8 +12,10 @@ let posts;
 let replies;
 
 async function connectToDatabase() {
+  console.log("Connecting to database!");
   const mongoURI = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.fdxtfzw.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`;
 
+  console.log("URI:", mongoURI);
   client = new MongoClient(mongoURI, {
     serverApi: ServerApiVersion.v1,
   });
@@ -35,7 +37,8 @@ async function connectToDatabase() {
 }
 
 // Call the function to connect to the database
-await connectToDatabase();
+// Use a promise to ensure the connection is established before using the exported variables
+const databaseConnection = connectToDatabase();
 
 // Export the collections and db
-export { users, comments, posts, replies, db };
+export { users, comments, posts, replies, db, databaseConnection };

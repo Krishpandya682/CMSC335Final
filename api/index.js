@@ -8,7 +8,7 @@ import replyRoutes from "./routes/replies.js";
 import newsApiRoutes from "./routes/newsApi.js";
 import multer from "multer";
 import { posts, databaseConnection } from "./mongodb.js"; // Assuming you have 'posts' and 'users' collections
-var cors = require('cors')
+import cors from "cors";
 
 const app = express();
 app.use(cors())

@@ -14,8 +14,8 @@ const config = {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    disableHostCheck: true,
-    allowedHosts: 'all',
+    compress: true,
+    allowedHosts: ['all'],
     open: true,
     host: "localhost",
   },

@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault()
     try{
       await login(inputs)
-      await axios.post("/auth/login", inputs)
+      await axios.post("https://three35finalapi.onrender.com/auth/login", inputs)
       navigate("/")
     }catch(err){
       console.log(err.response.data.error)

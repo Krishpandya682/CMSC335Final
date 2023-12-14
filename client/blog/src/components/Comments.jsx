@@ -21,9 +21,11 @@ const Comments = ({postId}) => {
 
 
   useEffect(()=>{
+    
     const fetchData = async ()=>{
       try{
-        const res = await axios.get(`/comments/?postId=${postId}`);
+        // const res = await axios.get(`/comments/?postId=${postId}`);
+        const res = await axios.get(`https://three35finalapi.onrender.com/comments/?postId=${postId}`);
         setComments(res.data)
 
       }catch(err){
@@ -42,9 +44,9 @@ const Comments = ({postId}) => {
         createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
       };
 
-      const response = await axios.post("/comments", cmt);
+      const response = await axios.post("https://three35finalapi.onrender.com/comments", cmt);
         setComments([...comments, response.data]);
-        const res = await axios.get(`/comments/?postId=${postId}`);
+        const res = await axios.get(`https://three35finalapi.onrender.com/comments/?postId=${postId}`);
         setComments(res.data)
         setDesc("");      
     }catch(err){
@@ -54,7 +56,7 @@ const Comments = ({postId}) => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`/comments/${commentId}`); 
+      await axios.delete(`https://three35finalapi.onrender.com/comments/${commentId}`); 
       setComments(comments.filter(comment => comment.id !== commentId)); 
     } catch (err) {
       console.log(err);

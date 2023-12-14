@@ -22,12 +22,12 @@ const Home = () => {
     const fetchData = async ()=>{
       console.log(cat)
       if (cat === "?cat=news") {
-        const res = await axios.get(`/newsApi/`);
+        const res = await axios.get(`https://three35finalapi.onrender.com/api/newsApi/`);
         console.log("NEWS",res.data.articles)
         setPosts(res.data.articles)
       }else{
       try{
-        const res = await axios.get(`/posts${cat}`);
+        const res = await axios.get(`https://three35finalapi.onrender.com/api/posts${cat}`);
         console.log("RES",res.data)
         setPosts(res.data)
       }catch(err){                                            

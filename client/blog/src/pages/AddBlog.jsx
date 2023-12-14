@@ -19,7 +19,7 @@ const AddBlog = () => {
     try{
       const formData = new FormData();
       formData.append("file", file)
-      const res = await axios.post("/upload", formData)
+      const res = await axios.post("https://three35finalapi.onrender.com/upload", formData)
       return res.data
     }catch(err){
       console.log(err)
@@ -30,8 +30,8 @@ const AddBlog = () => {
     e.preventDefault();
     const imgUrl = await upload();
     try{
-      state ? await axios.put(`/posts/${state._id}`, {title, desc:value, cat, img:file ? imgUrl:""}) :
-      await axios.post(`/posts/`, {title, desc:value, cat, img:file ? imgUrl:"", date:moment(Date.now()).format("YYYY-MM-DD HH:mm:ss" )});
+      state ? await axios.put(`https://three35finalapi.onrender.com/posts/${state._id}`, {title, desc:value, cat, img:file ? imgUrl:""}) :
+      await axios.post(`https://three35finalapi.onrender.com/posts/`, {title, desc:value, cat, img:file ? imgUrl:"", date:moment(Date.now()).format("YYYY-MM-DD HH:mm:ss" )});
       navigate("/");
     } catch(err) {
       console.log(err);

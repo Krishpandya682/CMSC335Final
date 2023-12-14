@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.1",
+    "cors": "^2.8.5",
     "dompurify": "^3.0.6",
     "moment": "^2.29.4",
     "react": "^18.2.0",
@@ -46,7 +47,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8800/api/",
+  "proxy": "https://three35finalapi.onrender.com/api/",
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.7",
     "css-loader": "^6.8.1",

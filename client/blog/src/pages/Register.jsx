@@ -32,10 +32,10 @@ const Register = () => {
         setError("");
       const formData = new FormData();
       formData.append("file", inputs.img)
-      const res = await axios.post("/upload", formData)
+      const res = await axios.post("https://three35finalapi.onrender.com/upload", formData)
       const imgUrl = res.data;
       //added proxy in package.json so don't have to type the url while requesting again and again
-      const dat = await axios.post("/auth/register", {...inputs, img: imgUrl})
+      const dat = await axios.post("https://three35finalapi.onrender.com/auth/register", {...inputs, img: imgUrl})
       console.log(dat.data);
       navigate("/login")
       }

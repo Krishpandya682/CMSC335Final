@@ -22,8 +22,8 @@ const Replies = ({commentId, postId, parentCommentId}) => {
           try{
             //the get request is wrong - it gets all comments under the commentId everytime, you all want the replies under the replyId
           const res = parentCommentId === null
-          ? await axios.get(`https://three35finalapi.onrender.com//replies/?commentId=${commentId}`)
-          : await axios.get(`https://three35finalapi.onrender.com//replies/?parentCommentId=${parentCommentId}`);
+          ? await axios.get(`https://three35finalapi.onrender.com/api/replies/?commentId=${commentId}`)
+          : await axios.get(`https://three35finalapi.onrender.com/api/replies/?parentCommentId=${parentCommentId}`);
                     console.log(res.data);
             setReplies(res.data)
     
@@ -44,11 +44,11 @@ const Replies = ({commentId, postId, parentCommentId}) => {
             parentCommentId: parentCommentId
           };
     
-          const response = await axios.post("https://three35finalapi.onrender.com/replies", cmt);
+          const response = await axios.post("https://three35finalapi.onrender.com/api/replies", cmt);
           setReplies([...replies, response.data]);
           const res = parentCommentId === null
-          ? await axios.get(`https://three35finalapi.onrender.com/replies/?commentId=${commentId}`)
-          : await axios.get(`https://three35finalapi.onrender.com/replies/?parentCommentId=${parentCommentId}`);
+          ? await axios.get(`https://three35finalapi.onrender.com/api/replies/?commentId=${commentId}`)
+          : await axios.get(`https://three35finalapi.onrender.com/api/replies/?parentCommentId=${parentCommentId}`);
                   setReplies(res.data);
           setDesc('');
         } catch (err) {
@@ -58,7 +58,7 @@ const Replies = ({commentId, postId, parentCommentId}) => {
 
     const handleDeleteReply = async (replyId) => {
       try {
-        await axios.delete(`https://three35finalapi.onrender.com/replies/${replyId}`); // Assuming your API route is "/comments/{commentId}" for deleting a comment
+        await axios.delete(`https://three35finalapi.onrender.com/api/replies/${replyId}`); // Assuming your API route is "/comments/{commentId}" for deleting a comment
         setReplies(replies.filter(reply => reply.id !== replyId)); // Remove the deleted comment from the state
       } catch (err) {
         console.log(err);

@@ -110,11 +110,12 @@ export const login = async (req, res) => {
 
     // Using JSON Web Token for security
     const token = jwt.sign({ id: user.id }, 'jwtkey');
-
+    console.log("cookie stored", token);
     // Storing the token inside a cookie on the website
     res.cookie('access_token', token, {
       httpOnly: true, // For extra security
     }).status(200).json({ username: user.username, email: user.email, img: user.img }); // To ensure security - not sending password
+    
   } catch (error) {
     console.error('Error during login:', error);
     return res.status(500).json({ error: 'Internal Server Error' });

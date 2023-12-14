@@ -30,7 +30,7 @@ const BlogPost = () => {
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-        const res = await axios.get(`https://three35finalapi.onrender.com//posts/${postID}`);
+        const res = await axios.get(`https://three35finalapi.onrender.com/api/posts/${postID}`);
         setPost(res.data)
         console.log("Res data:",res.data);
       }catch(err){
@@ -42,7 +42,7 @@ const BlogPost = () => {
 
   const handleDelete = async ()=>{
     try{
-      await axios.delete(`https://three35finalapi.onrender.com//posts/${postID}`);
+      await axios.delete(`https://three35finalapi.onrender.com/api/posts/${postID}`);
       navigate("/")
     }catch(err){
       console.log(err)

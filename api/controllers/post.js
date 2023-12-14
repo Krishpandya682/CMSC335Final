@@ -99,9 +99,9 @@ export const addPost = async (req, res) => {
       img: req.body.img,
       cat: req.body.cat,
       date: req.body.date,
-      uid: userInfo?userInfo._id:req.body.uid,
+      uid: req.body.uid,
     };
-    console.log("User INfo:", userInfo);
+    // console.log("User INfo:", userInfo);
     await posts.insertOne(newPost);
 
     return res.json("Post has been created");

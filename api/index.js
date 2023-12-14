@@ -33,7 +33,9 @@ app.post('/api/upload', upload.single('file'), function (req, res) {
 app.get('/api/upload', function (req, res) {
   res.send("GET");
 })
-
+app.get('/', function (req, res) {
+  res.send("Welcome to my API ROOT!");
+})
 app.use("/api/newsApi", newsApiRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);

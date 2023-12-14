@@ -38,4 +38,4 @@ async function connectToDatabase() {
 await connectToDatabase();
 
 // Export the collections and db
-export { users, comments, posts, replies, db, databaseConnection };
+export { users, comments, posts, replies, db };

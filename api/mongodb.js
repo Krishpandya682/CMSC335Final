@@ -20,6 +20,7 @@ async function connectToDatabase() {
 
   try {
     await client.connect();
+    console.lof("Connected to mongoDB");
     db = client.db(process.env.MONGO_DB_NAME);
 
     users = db.collection(process.env.MONGO_USERS_COLLECTION);
@@ -34,7 +35,7 @@ async function connectToDatabase() {
 }
 
 // Call the function to connect to the database
-connectToDatabase();
+await connectToDatabase();
 
 // Export the collections and db
-export { users, comments, posts, replies, db };
+export { users, comments, posts, replies, db, databaseConnection };

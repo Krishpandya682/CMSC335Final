@@ -4,7 +4,7 @@ import Logo from "../img/logo.png"
 const Footer = () => {
   return (
     <footer>
-      <span>Made by Shreeya Patel</span>
+      <span>Made by Shreeya Patel and Krish Pandya</span>
     </footer>
   )
 }

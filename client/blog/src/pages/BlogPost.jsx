@@ -52,9 +52,9 @@ const BlogPost = () => {
   return(
     <div className = 'one'>
       <div className='content'>
-        <img src = {`../upload/${post?.img}`}/>
+        <img src = {`${post?.img}`}/>
         <div className="user">
-          {post.userImg && <img src = {`../upload/${post.userImg}`} alt = "user profile"/>}
+          {post.userImg && <img src = {`${post.userImg}`} alt = "user profile"/>}
           <div className="info">
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>

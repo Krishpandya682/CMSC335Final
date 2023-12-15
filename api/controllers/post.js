@@ -181,12 +181,7 @@ export const deletePost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   try {
-    const token = req.cookies.access_token;
-    if (!token) return res.status(401).json("Not authenticated!");
-
-    const userInfo = jwt.verify(token, "jwtkey");
-    if (!userInfo) return res.status(403).json("Token is not valid!");
-
+   
     const postId = req.params.id;
 
     const updateFields = {
@@ -200,7 +195,7 @@ export const updatePost = async (req, res) => {
     }
 
     const result = await posts.updateOne(
-      { _id: new ObjectId(postId), uid: userInfo._id },
+      { _id: new ObjectId(postId), uid: req.body.uid },
       { $set: updateFields }
     );
 

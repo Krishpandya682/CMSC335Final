@@ -7,7 +7,7 @@ const Register = () => {
     username:"",
     email:"",
     password:"",
-    img:null
+    img:""
   })
 
   const [err,setError] = useState(null)
@@ -15,12 +15,9 @@ const Register = () => {
   const navigate = useNavigate()
 
   const handleChange = e => {
-    if (e.target.name === 'img') {
-      // Store the file object in the state
-      setInputs(prev => ({ ...prev, [e.target.name]: e.target.files[0] }));
-    } else {
+    
       setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    }
+  
   };
 
   const handleSubmit = async e =>{
@@ -32,10 +29,10 @@ const Register = () => {
         setError("");
       const formData = new FormData();
       formData.append("file", inputs.img)
-      const res = await axios.post("https://three35finalapi.onrender.com/api/upload", formData)
-      const imgUrl = res.data;
+      // const res = await axios.post("https://three35finalapi.onrender.com/api/upload", formData)
+      // const imgUrl = res.data;
       //added proxy in package.json so don't have to type the url while requesting again and again
-      const dat = await axios.post("https://three35finalapi.onrender.com/api/auth/register", {...inputs, img: imgUrl})
+      const dat = await axios.post("https://three35finalapi.onrender.com/api/auth/register", inputs)
       console.log(dat.data);
       navigate("/login")
       }
@@ -52,7 +49,8 @@ const Register = () => {
         <input required type = "text" placeholder='username' name='username' onChange={handleChange}/>
         <input required type = "email " placeholder='email' name = 'email' onChange={handleChange}/>
         <input required type = "password" placeholder='password' name = 'password' onChange={handleChange}/>
-        <input required type='file' name = 'img' onChange={handleChange}/>
+        <input required type = "text" placeholder='img' name = 'img' onChange={handleChange}/>
+        {/* <input required type='file' name = 'img' onChange={handleChange}/> */}
         <button onClick={handleSubmit}>Register</button>
         {err && <p>{err}</p>}
         <span>Already have an account? <Link to = "/login">Login</Link></span>

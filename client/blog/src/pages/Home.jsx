@@ -60,7 +60,7 @@ const Home = () => {
           post=>(
             <div className='post' key = {post._id}>
               <div className='img'>
-                <img src = {!(cat === "?cat=news")?`../upload/${post.img}`:post.urlToImage} alt = ""/>
+                <img src = {!(cat === "?cat=news")?`${post.img}`:post.urlToImage} alt = ""/>
               </div>
               <div className='content'>
                 <Link className = "link" to = {`/post/${post._id}`}>

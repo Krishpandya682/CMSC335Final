@@ -23,7 +23,6 @@
     "mysql": "^2.18.1",
     "newsapi": "^2.4.1"
   },
-  "proxy": "https://three35finalapi.onrender.com/",
   "devDependencies": {
     "nodemon": "^3.0.2"
   }

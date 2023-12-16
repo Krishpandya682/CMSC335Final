@@ -1,16 +1,19 @@
 $lightGreen: rgba(210, 185, 231, 0.5);
 
-.app{
+.app {
     display: flex;
     justify-content: center;
-    .container{
+
+    .container {
         width: 100%;
-        .link{
+
+        .link {
             text-decoration: none;
             color: inherit;
         }
+
         //for login and register pages
-        .auth{
+        .auth {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -19,13 +22,13 @@ $lightGreen: rgba(210, 185, 231, 0.5);
             background-color: $lightGreen;
         }
 
-        h1{
+        h1 {
             font-size: 14px;
             color: Black;
             margin-bottom: 20px;
         }
 
-        form{
+        form {
             display: flex;
             flex-direction: column;
             padding: 50px;
@@ -33,13 +36,13 @@ $lightGreen: rgba(210, 185, 231, 0.5);
             width: 200px;
             gap: 20px;
 
-            input{
+            input {
                 padding: 10px;
                 border: none;
                 border-bottom: 1px solid gray;
             }
 
-            button{
+            button {
                 padding: 10px;
                 border: none;
                 background-color: #795E98;
@@ -47,41 +50,43 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                 cursor: pointer;
             }
 
-            span{
+            span {
                 font-size: 12px;
-                text-align: center  ;
+                text-align: center;
             }
         }
 
         //Navbar
-        .navbar{
+        .navbar {
 
-            .header{
+            .header {
                 height: 100px;
                 display: flex;
                 align-items: center;
-                background-color:rgba(210, 185, 231, 0.5);
-                
-                .logo{
+                background-color: rgba(210, 185, 231, 0.5);
+
+                .logo {
                     margin-left: 130px;
                     flex: 1;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     height: 60px;
-                    img{
+
+                    img {
                         width: 500px;
                     }
                 }
 
-                .userInfo{
+                .userInfo {
                     margin-right: 10px;
                     display: flex;
                     align-items: center;
                     gap: 20px;
                 }
             }
-            .container{
+
+            .container {
                 padding: 6px 0px;
                 display: flex;
                 align-items: center;
@@ -89,7 +94,7 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                 background-color: rgba(0, 0, 0, 1);
                 height: 40px;
 
-                .links{
+                .links {
                     margin-left: 200px;
                     margin-right: 20px;
                     display: flex;
@@ -99,29 +104,30 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                     font-weight: 200;
                     font-size: smaller;
 
-                    .link{
+                    .link {
                         border-radius: 20%;
-                        &:hover{
-                            color:#d2b9e7;
+
+                        &:hover {
+                            color: #d2b9e7;
                             font-weight: 1000;
                             text-decoration: underline;
                         }
                     }
-                    
-                    h6{
+
+                    h6 {
                         font-size: 16px;
                         font-weight: 350;
                     }
 
-                    span{
+                    span {
                         cursor: pointer;
                     }
                 }
 
-                .write{
+                .write {
                     flex: 1;
                     margin-left: 10px;
-                    background-color:rgba(210, 185, 231, 1);
+                    background-color: rgba(210, 185, 231, 1);
                     width: 60px;
                     height: 30px;
                     border-radius: 10%;
@@ -133,7 +139,7 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                     border: 1px solid white;
                     color: black;
 
-                    &:hover{
+                    &:hover {
                         background-color: white;
                         border: 1px solid #795E98;
                     }
@@ -142,8 +148,8 @@ $lightGreen: rgba(210, 185, 231, 0.5);
         }
 
         //footer
-        
-        footer{
+
+        footer {
             margin-top: 100px;
             padding: 20px;
             background-color: rgba(210, 185, 231, 0.5);
@@ -155,9 +161,10 @@ $lightGreen: rgba(210, 185, 231, 0.5);
 
         //home page
 
-        .home{
+        .home {
             height: 100%;
-            .posts{
+
+            .posts {
                 margin-left: 40px;
                 margin-top: 50px;
                 margin-right: 40px;
@@ -165,21 +172,21 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                 flex-direction: column;
                 gap: 80px;
 
-                .post{
+                .post {
                     display: flex;
                     gap: 100px;
                     align-items: center;
 
-                    &:nth-child(2n+1){
+                    &:nth-child(2n+1) {
                         flex-direction: row-reverse;
                     }
 
-                    .img{
+                    .img {
                         flex: 1;
                         position: relative;
 
-                        &::after{
-                            content:"";
+                        &::after {
+                            content: "";
                             width: 100%;
                             height: 100%;
                             position: absolute;
@@ -188,28 +195,28 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                             z-index: -1;
                         }
 
-                        img{
+                        img {
                             width: 100%;
                             max-height: 400px;
                             object-fit: cover;
                         }
                     }
 
-                    .content{
+                    .content {
                         flex: 2;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
 
-                        h1{
+                        h1 {
                             font-size: 48px;
                         }
 
-                        p{
+                        p {
                             font-size: 18px;
                         }
 
-                        button{
+                        button {
                             width: max-content;
                             padding: 10px 20px;
                             border: none;
@@ -218,7 +225,7 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                             border: 1px solid $lightGreen;
                             color: #795E98;
 
-                            &:hover{
+                            &:hover {
                                 border: 1px solid white;
                                 background-color: $lightGreen;
                                 color: black;
@@ -230,23 +237,24 @@ $lightGreen: rgba(210, 185, 231, 0.5);
         }
 
         //one blog post page
-        .one{
+        .one {
             margin: 40px;
             display: flex;
             gap: 50px;
 
-            .content{
+            .content {
                 flex: 5;
                 display: flex;
                 flex-direction: column;
 
-                img{
-                    max-width: 100%; /* Adjust this value as needed */
+                img {
+                    max-width: 100%;
+                    /* Adjust this value as needed */
                     height: auto;
                     object-fit: cover;
                 }
 
-                .item{
+                .item {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -255,21 +263,21 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                     background-color: rgba(210, 185, 231, 0.5);
                 }
 
-                .user{
+                .user {
                     margin-top: 30px;
                     display: flex;
                     align-items: center;
                     gap: 10px;
                     font-size: 14px;
 
-                    img{
+                    img {
                         width: 50px;
                         height: 50px;
                         object-fit: cover;
                         border-radius: 50%;
                     }
 
-                    .symbol{
+                    .symbol {
                         margin-top: 20px;
                         margin-left: 20px;
                         width: 20px;
@@ -279,64 +287,64 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                         opacity: 60%;
                     }
 
-                    .info{
+                    .info {
                         align-items: center;
                     }
 
-                    span{
+                    span {
                         font-weight: bold;
                     }
                 }
 
-                .edit{
+                .edit {
                     display: flex;
                     gap: 5px;
 
-                    img{
+                    img {
                         width: 20px;
                         height: 20px;
                         cursor: pointer;
                     }
                 }
 
-                h1{
+                h1 {
                     font-size: 40px;
                     color: black;
                 }
 
-                p{
+                p {
                     text-align: justify;
                     line-height: 30px;
                 }
             }
 
-            .menu{
+            .menu {
                 flex: 2;
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
 
-                h1{
+                h1 {
                     font-size: 20px;
                     color: #555;
                 }
 
-                .post{
+                .post {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
 
-                    img{
+                    img {
                         width: 100%;
                         height: 200px;
                         object-fit: cover;
                     }
 
-                    h2{
+                    h2 {
                         color: #555;
                     }
 
-                    button{
+                    button {
                         width: max-content;
                         padding: 10px 20px;
                         border: none;
@@ -345,7 +353,7 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                         border: 1px solid $lightGreen;
                         color: #795E98;
 
-                        &:hover{
+                        &:hover {
                             border: 1px solid white;
                             background-color: $lightGreen;
                             color: black;
@@ -357,42 +365,49 @@ $lightGreen: rgba(210, 185, 231, 0.5);
 
         //write page
 
-        .add{
+        .add {
             margin: 40px;
             margin-top: 20px;
             display: flex;
             gap: 20px;
 
-            .content{
+
+            .content {
+
                 flex: 5;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
 
-                input{
+                input {
                     padding: 10px;
                     border: 1px solid lightgray;
                 }
 
-                .editorContainer{
+                .editorContainer {
                     height: 300px;
                     overflow: scroll;
                     border: 1px solid lightgrey;
                 }
 
-                .editor{
+                .editor {
                     height: 100%;
                     border: none;
+                    button{
+                        background-color: white!important;
+                        padding: 3px;
+                    }
                 }
+
             }
 
-            .menu{
+            .menu {
                 flex: 2;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
 
-                .item{
+                .item {
                     border: 1px solid lightgray;
                     padding: 10px;
                     flex: 1;
@@ -402,20 +417,20 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                     font-size: 12px;
                     color: #555;
 
-                    h1{
+                    h1 {
                         font-size: 20px;
                     }
 
-                    .file{
+                    .file {
                         text-decoration: underline;
                         cursor: pointer;
                     }
 
-                    .buttons{
+                    .buttons {
                         display: flex;
                         justify-content: space-between;
 
-                        :first-child{
+                        :first-child {
                             cursor: pointer;
                             color: #795E98;
                             background-color: white;
@@ -423,7 +438,7 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                             padding: 3px 5px;
                         }
 
-                        :last-child{
+                        :last-child {
                             cursor: pointer;
                             color: white;
                             background-color: #795E98;
@@ -432,7 +447,7 @@ $lightGreen: rgba(210, 185, 231, 0.5);
                         }
                     }
 
-                    .cat{
+                    .cat {
                         display: flex;
                         align-items: center;
                         gap: 2px;

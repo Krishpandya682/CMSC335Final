@@ -30,7 +30,7 @@ const AddBlog = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    
+
     try {
       state
         ? await axios.put(
@@ -60,7 +60,7 @@ const AddBlog = () => {
 
   return (
     <div className="add">
-      <div className="content">
+      <form className="content">
         <input
           type="text"
           value={imgUrl}
@@ -81,7 +81,8 @@ const AddBlog = () => {
             onChange={setValue}
           />
         </div>
-      </div>
+      </form>
+
       <div className="menu">
         <div className="item">
           <h1>Publish</h1>
@@ -128,30 +129,6 @@ const AddBlog = () => {
               onChange={(e) => setCat(e.target.value)}
             />
             <label htmlFor="tech">Technology</label>
-          </div>
-
-          <div className="cat">
-            <input
-              type="radio"
-              checked={cat === "cinema"}
-              name="cat"
-              value="cinema"
-              id="cinema"
-              onChange={(e) => setCat(e.target.value)}
-            />
-            <label htmlFor="cinema">Cinema</label>
-          </div>
-
-          <div className="cat">
-            <input
-              type="radio"
-              checked={cat === "design"}
-              name="cat"
-              value="design"
-              id="design"
-              onChange={(e) => setCat(e.target.value)}
-            />
-            <label htmlFor="design">Design</label>
           </div>
 
           <div className="cat">

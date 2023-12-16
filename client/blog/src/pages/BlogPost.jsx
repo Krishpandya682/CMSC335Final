@@ -76,7 +76,7 @@ const BlogPost = () => {
             __html: DOMPurify.sanitize(post.desc),
           }}
         ></p>
-        {commentOpen ? (
+        {/* {commentOpen ? (
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             Hide Comments
           </div>
@@ -84,8 +84,8 @@ const BlogPost = () => {
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             See Comments
           </div>
-        )}
-        {commentOpen && <Comments postId={post.id} />}
+        )} */}
+        {/* {commentOpen && <Comments postId={post.id} />} */}
       </div>
       <Menu cat={post.cat} />
     </div>

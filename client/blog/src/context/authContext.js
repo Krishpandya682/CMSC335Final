@@ -16,6 +16,7 @@ export const AuthContextProvider = ({children})=>{
     const logout = async(inputs)=>{
         await axios.post("https://three35finalapi.onrender.com/api/auth/logout");
         setCurrentUser(null)
+        localStorage.clear("user");
     };
 
     useEffect(()=>{

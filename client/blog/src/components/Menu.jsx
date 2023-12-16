@@ -11,6 +11,7 @@ const Menu = ({cat}) => {
       try{
         const res = await axios.get(`https://three35finalapi.onrender.com/api/posts/?cat=${cat}`);
         setPosts(res.data)
+        console.log("POsts:-", res.data);
       }catch(err){
         console.log(err)
       }
@@ -22,12 +23,12 @@ const Menu = ({cat}) => {
     <div className='menu'>
       <h1>Other posts you may like</h1>
       {posts.map(post=>(
-        <div className='post' key = {post.id}>
+        <div className='post' key = {post._id}>
           <img src = {`${post.img}`} alt = ""/>
-          <Link className = "link" to = {`/post/${post.id}`}>
+          <Link className = "link" to = {`/post/${post._id}`}>
           <h2>{post.title}</h2>
           </Link>
-          <Link className = "link" to = {`/post/${post.id}`}>
+          <Link className = "link" to = {`/post/${post._id}`}>
           <button>Read More </button>
           </Link>
         </div>

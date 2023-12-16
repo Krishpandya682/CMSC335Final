@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'three35finalapi.onrender.com',
+      target: 'three35finalclient.onrender.com',
       changeOrigin: true,
     })
   );
